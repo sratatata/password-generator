@@ -1,5 +1,7 @@
 # README #
 
+[![Build Status](https://travis-ci.org/sratatata/password-generator.svg?branch=master)](https://travis-ci.org/sratatata/password-generator)
+
 ### What is this repository for? ###
 
 This simple application is helpfull in generating easy to remember passwords. 
