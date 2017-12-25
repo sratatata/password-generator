@@ -12,7 +12,7 @@ import net.zarski.pg.passwordgenerator.fragments.ListOfPasswords;
 
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity implements Generate.OnFragmentInteractionListener, ListOfPasswords.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements Generate.OnFragmentInteractionListener {
     private RandomWord nouns;
     private RandomWord adjectives;
 
@@ -26,11 +26,6 @@ public class MainActivity extends AppCompatActivity implements Generate.OnFragme
             adjectives = new RandomWord(this.getApplicationContext().getResources().openRawResource(R.raw.przymiotniki));
         } catch (IOException e) {
         }
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 
     @Override
