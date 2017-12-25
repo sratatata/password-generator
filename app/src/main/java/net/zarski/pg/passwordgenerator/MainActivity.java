@@ -1,18 +1,15 @@
 package net.zarski.pg.passwordgenerator;
 
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.os.*;
+import android.support.design.widget.*;
+import android.support.v7.app.*;
+import java.io.*;
+import net.zarski.pg.passwordgenerator.fragments.*;
+import android.view.View.*;
+import android.view.*;
 
-import net.zarski.pg.passwordgenerator.fragments.Generate;
-import net.zarski.pg.passwordgenerator.fragments.ListOfPasswords;
-
-import java.io.IOException;
-
-public class MainActivity extends AppCompatActivity implements Generate.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements Generate.OnFragmentInteractionListener, FloatingActionButton.OnClickListener
+{
     private RandomWord nouns;
     private RandomWord adjectives;
 
@@ -26,10 +23,14 @@ public class MainActivity extends AppCompatActivity implements Generate.OnFragme
             adjectives = new RandomWord(this.getApplicationContext().getResources().openRawResource(R.raw.przymiotniki));
         } catch (IOException e) {
         }
+		
+		FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
+		fab.setOnClickListener(this);
     }
 
-    @Override
-    public void onGeneratePressed() {
+	@Override
+	public void onClick(View p1)
+	{
         RandomPhrase randomPhrase = new RandomPhrase(nouns, adjectives);
 
         ListOfPasswords list = (ListOfPasswords)getFragmentManager().findFragmentById(R.id.list);
@@ -40,4 +41,10 @@ public class MainActivity extends AppCompatActivity implements Generate.OnFragme
             list.pushItem(randomPhrase.next());
         }
     }
+	
+	@Override
+	public void onGeneratePressed()
+	{
+		// TODO: Implement this method
+	}
 }
