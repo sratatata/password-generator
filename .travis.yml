@@ -9,6 +9,15 @@ android:
     - platform-tools
     - build-tools-26.0.1
     - android-26
+
+before-script:
+ # Download desired version of Gradle
+  - wget http://services.gradle.org/distributions/gradle-2.10-all.zip
+  - unzip -qq gradle-2.10-all.zip
+  - export GRADLE_HOME=$PWD/gradle-2.10
+  - export PATH=$GRADLE_HOME/bin:$PATH
+  # just to test gradle version, against our provided one
+  - gradle -v
     
 script: gradle assembleRelease
 
