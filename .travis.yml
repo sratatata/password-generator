@@ -10,7 +10,7 @@ android:
     - build-tools-26.0.1
     - android-26
 
-before-script:
+before_script:
  # Download desired version of Gradle
   - wget http://services.gradle.org/distributions/gradle-2.10-all.zip
   - unzip -qq gradle-2.10-all.zip
