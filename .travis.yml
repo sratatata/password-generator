@@ -4,12 +4,13 @@ sudo: false
 
 android:
   components:
-    - platform-tools
     - tools
-    - build-tools-23.0.0
-    - android-23
-    - sys-img-armeabi-v7a-android-22
-    - extra-android-m2repository
+    - tools
+    - platform-tools
+    - build-tools-26.0.1
+    - android-26
     
 script: gradle assembleRelease
+
+after_failure: "cat $TRAVIS_BUILD_DIR/app/build/outputs/lint-results-debug.xml"
 
