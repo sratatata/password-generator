@@ -12,7 +12,7 @@ public class Phrase {
     public Phrase(String noun, String adjective) {
         this.noun = noun;
 		PolishNounAnalysis pna = new PolishNounAnalysis();
-		this.kind = kind = pna.calculateKind(noun);
+		this.kind = pna.calculateKind(noun);
         this.adjective = adjective;
     }
 
