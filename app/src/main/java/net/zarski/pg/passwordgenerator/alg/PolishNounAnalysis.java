@@ -33,7 +33,7 @@ public class PolishNounAnalysis
 		NONE("e");
 		private String sufix;
 
-		public Kind(String sufix){
+		private Kind(String sufix){
 			this.sufix = sufix;
 		}
 
